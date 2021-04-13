@@ -1,0 +1,39 @@
+nie używać var przy js (staroć) lepiej let / const
+
+x===y   // porównanie typów a nie samych wartości
+
+tablica=[1,2,3,true,"yyy"]    // tablica przyjmuje wszystkie typy
+
+mapowanie tablicy:
+const tab2=tab1.map((wartosc,index)=>{return wartosc+index});
+
+wyswietlenie tablicy w foreach:
+tablica.forEach((wartosc)=>{console.log(wartosc)});
+
+
+petla for przykłady:
+const string='test';
+for (let znak of string){
+console.log(znak);
+}
+
+for (let index in obiekt){
+console.log(index);
+console.log(obiekt[index]);
+}
+
+obiekty:
+obekt = {
+autor: 'Michał Brzęczy',
+tytul: 'bla bla',
+};
+
+funkcje:
+const funkcja //będzie działać tylko w jednym miejscu(?), przy 'let' będzie wszędzie
+
+let funkcja=(parametr)=>(parametr); //zwraca parametr podany do funkcji
+// np funkcja('test'); zwróci 'test'
+
+funkcja=(parametr)=>({obiekt:parametr}); //zwraca przypisany do obiektu parametr podany do //funkcji, np funkcja('test'); zwróci {obiekt:'test'}
+
+
