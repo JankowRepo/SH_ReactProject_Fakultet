@@ -23,7 +23,7 @@ import React from "react";
 const CustomerHeader: React.FC = ({children}) => {
     return (
         <div>
-            <p>Custom Header</p>
+            <h1>Edytuj liczbę</h1>
             {children}
         </div>
     );

@@ -1,5 +1,6 @@
 import React from "react";
 import '../App.css';
+import BOnClick from "./BOnClick";
 import {equal} from "assert";
 
 interface CounterProps{
@@ -9,6 +10,13 @@ interface CounterProps{
 
 const Counter: React.FC<CounterProps> = ({initialNumber,onNumberChange}) => {
     const [counterNumber, setCounterNumber]=React.useState(initialNumber || 0);
+
+    const setDefaultValue = () => {
+        const number = 5;
+        setCounterNumber(number);
+        onNumberChange && onNumberChange(number);
+    }
+
     const addNumber=()=>{
         const number= counterNumber+1
         setCounterNumber(number);
@@ -24,12 +32,17 @@ const Counter: React.FC<CounterProps> = ({initialNumber,onNumberChange}) => {
     }
     return (
         <div className="App">
-            <button onClick={decraseNumber}>+</button>
+            <div>
+                <BOnClick content="Reset" click={setDefaultValue} />
+            </div>
+            <BOnClick content="Zmniejsz liczbę o 1" click={decraseNumber}>-</BOnClick>
+            <p/>
             {counterNumber}
-            <button onClick={addNumber}>+</button>
+            <p/>
+            <BOnClick content="Zwiększ liczbę o 1" click={addNumber}>+</BOnClick>
         </div>
     );
 }
-
-
 export default Counter;
+
+

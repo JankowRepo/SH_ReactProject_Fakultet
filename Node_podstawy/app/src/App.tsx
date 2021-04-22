@@ -20,16 +20,40 @@ const App=() =>{
 
     }
 
+    const lookAtNumber = (number: number) => {
+        if (number > 10 && number<=15)
+        {
+            return "Liczba jest wieksza od 10";
+        }
+        else if (number < -10)
+        {
+            return "Liczba jest mniejsza od -10";
+        }
+        else if (number > 15)
+        {
+            return "Liczba przekroczona";
+        }
+        else
+            return "";
+    }
+
     return (
         <div className="App">
             <CustomHeader>
-                <Counter onNumberChange={handleNumberChange} />
+                <Counter initialNumber={5} onNumberChange={handleNumberChange} />
                 {
-                    changeNumber > 0 && (<div>Liczba jest większa niz 0</div>)
+                    //changeNumber > 0 && (<div>Liczba jest większa niz 0</div>)
                 }
-                {liczbaMniejszaOdZera(changeNumber)}
+                {
+                    //changeNumber == 0 && (<div>Liczba jest równa 0</div>)}
+                }
+                {
+                    //liczbaMniejszaOdZera(changeNumber)}
+                }
+                {
+                    lookAtNumber(changeNumber)
+                }
             </CustomHeader>
-
         </div>
     );
 }
