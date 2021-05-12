@@ -4,7 +4,7 @@ import movieService from "../../services/movies";
 
 const Home=()=>{
     const[search, setSearch]=React.useState('Harry Potter')
-    const[movie, setMovie]=React.useState()
+    const [movie, setMovie] = React.useState({});
     React.useEffect( ()=>{
         const makeRequest=async()=>{
             try{
